@@ -1,2 +1,4 @@
-class Pais {
+class Pais (var id: Int,){
+
+
 }
