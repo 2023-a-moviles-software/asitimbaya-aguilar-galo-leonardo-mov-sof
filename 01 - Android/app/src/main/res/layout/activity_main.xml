@@ -42,4 +42,13 @@
         app:layout_constraintStart_toStartOf="@+id/btn_ciclo_vida"
         tools:layout_editor_absoluteY="392dp" />
 
+    <Button
+        android:id="@+id/btn_ir_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LIST VIEW"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ciclo_vida"
+        app:layout_constraintStart_toStartOf="@+id/btn_ciclo_vida"
+        tools:layout_editor_absoluteY="130dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
