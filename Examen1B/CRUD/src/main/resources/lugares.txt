@@ -1,2 +1,2 @@
 1,Mitad del mundo,10.5,10/10/1850,true,1
-2,museo de quito,3.0,13/09/2001,false,1
+3,Ruina del Ingapirca,40.0,01/01/1600,true,3
