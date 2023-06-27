@@ -30,7 +30,8 @@
         app:layout_constraintEnd_toEndOf="@+id/textView16"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ir_list_view" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_list_view"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -39,9 +40,9 @@
         android:text="@string/test_msg"
         android:textColor="@color/txt_color"
         app:layout_constraintEnd_toEndOf="@+id/btn_ciclo_vida"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="@+id/btn_ciclo_vida"
-        tools:layout_editor_absoluteY="392dp" />
+        tools:layout_editor_absoluteY="36dp" />
 
     <Button
         android:id="@+id/btn_ir_list_view"
@@ -66,8 +67,10 @@
         android:id="@+id/btn_ir_intent_explicito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
         android:text="I. EXPLICITO"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="187dp" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_ciclo_vida"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_intent_implicito" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
