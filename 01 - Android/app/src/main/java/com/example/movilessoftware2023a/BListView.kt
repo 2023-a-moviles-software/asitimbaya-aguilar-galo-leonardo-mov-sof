@@ -85,6 +85,7 @@ class BListView : AppCompatActivity() {
         val dialogo = builder.create()
         dialogo.show()
     }
+
     override fun onCreateContextMenu(
         menu: ContextMenu?,
         v: View?,

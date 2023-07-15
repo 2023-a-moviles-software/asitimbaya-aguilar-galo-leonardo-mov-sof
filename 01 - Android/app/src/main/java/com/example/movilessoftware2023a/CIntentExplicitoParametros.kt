@@ -25,6 +25,8 @@ class CIntentExplicitoParametros : AppCompatActivity() {
             RESULT_OK,
             intentDevolverParametros
         )
-        finish()
     }
+
+
+
 }
