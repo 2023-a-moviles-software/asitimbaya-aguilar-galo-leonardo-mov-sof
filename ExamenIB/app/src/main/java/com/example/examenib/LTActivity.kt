@@ -86,6 +86,7 @@ class LTActivity : AppCompatActivity() {
         //Obtener el id del array list seleccionado
         val info = menuInfo as AdapterView.AdapterContextMenuInfo
         val id = info.position
+        idItemSeleccionado = id
         idLugarSeleccionado = arregloLugar[idItemSeleccionado].idLT!!-1
     }
 
@@ -116,9 +117,9 @@ class LTActivity : AppCompatActivity() {
                     idLugarSeleccionado?.let { arregloLugarTuristico.removeAt(it) }
                     arregloLugar.removeAt(idItemSeleccionado)
                     llenarDatos()
-                    mostrarSnackBar("Eliminado con exito"+idLugarSeleccionado+"/"+idItemSeleccionado)
+                    mostrarSnackBar("Eliminado con exito")
                 }catch (e: Exception){
-                    mostrarSnackBar("Error al eliminar"+idLugarSeleccionado+"/"+idItemSeleccionado)
+                    mostrarSnackBar("Error al eliminar")
                 }
             }
         )
