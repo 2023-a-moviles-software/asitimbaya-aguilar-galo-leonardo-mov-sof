@@ -8,7 +8,6 @@ class Pais(
     var precioDolar: Double?,
 ) {
     override fun toString(): String {
-        return "${id}-${nombre} - ${idioma} - ${moneda} - ${precioDolar}"
+        return "${id}|${nombre}|${idioma}|${moneda}|${precioDolar}"
     }
-
 }
