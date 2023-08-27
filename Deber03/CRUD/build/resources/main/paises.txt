@@ -1,4 +1,0 @@
-1,Ecuador,español,dolar,1.0
-2,Colombia,esp,peso,0.3
-3,Peru,español,sol,0.3
-4,Argentina,español,peso arg,0.12
