@@ -20,7 +20,6 @@ class CRUDLugarTuristico : AppCompatActivity() {
         val nombrePais = intent.getStringExtra("nombreP") ?: ""
         val nombreLugar = intent.getStringExtra("nombreL") ?: ""
         llenarDatosFormulario(nombrePais, nombreLugar)
-        mostrarSnackBar(nombrePais + nombreLugar)
         val botonCrear = findViewById<Button>(R.id.btn_createLugar)
         botonCrear.setOnClickListener {
             try {

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "359905114085",
+    "project_id": "autoassist-ec",
+    "storage_bucket": "autoassist-ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359905114085:android:55166e679cb2f165d7a10c",
+        "android_client_info": {
+          "package_name": "com.example.autoassist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMqwrsaM2i_ZFsMpCk5e33WwppKuGJ738"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
