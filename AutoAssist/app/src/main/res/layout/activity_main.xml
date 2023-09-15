@@ -54,7 +54,7 @@
         android:layout_height="71dp"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/roboto_medium"
-        android:text="Iniciar sesión"
+        android:text="Empezar"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
