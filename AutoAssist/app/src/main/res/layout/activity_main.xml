@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#3199E4"
     android:backgroundTint="#3199E4"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25"
-        tools:srcCompat="@drawable/img" />
+        android:src="@drawable/img" />
 
     <TextView
         android:id="@+id/textView"
