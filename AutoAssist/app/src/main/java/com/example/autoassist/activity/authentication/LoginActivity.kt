@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.autoassist.R
+import com.example.autoassist.activity.InicioActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
@@ -60,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
                             "El usuario a ingresado con exito!",
                             Toast.LENGTH_SHORT
                         ).show()
+                        abrirActividadConParametros(InicioActivity::class.java, email)
                     } else {
                         Toast.makeText(
                             this, "El usuario no se pudo ingresar",
@@ -75,5 +77,13 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun abrirActividadConParametros(clase: Class<*>, correo: String) {
+        val intentExplicito = Intent(this, clase)
+        // Enviar parámetros
+        intentExplicito.putExtra("email", correo)
+        // Iniciar la actividad
+        startActivity(intentExplicito)
     }
 }

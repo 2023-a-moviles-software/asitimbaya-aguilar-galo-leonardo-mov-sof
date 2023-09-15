@@ -1,6 +1,6 @@
 package com.example.autoassist.model
 
 data class Usuario(
-    val nombreUsuario: String? = null,
-    val correoUsuario: String? = null
+    val userName: String? = null,
+    val email: String? = null
 )
