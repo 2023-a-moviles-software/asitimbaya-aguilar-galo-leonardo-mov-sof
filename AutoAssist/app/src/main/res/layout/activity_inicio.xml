@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.577" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imagenVehiculoInicio"
         android:layout_width="340dp"
         android:layout_height="208dp"
         android:layout_marginTop="16dp"
