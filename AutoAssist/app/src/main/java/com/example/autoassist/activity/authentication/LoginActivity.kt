@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.autoassist.R
+import com.example.autoassist.activity.RegistrarVehiculoActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
@@ -26,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
         buttonLogin.setOnClickListener {
             loginUser()
-            //finish()
+            navigateToRegistrarVehiculo()
         }
 
         navigateToRegister()
@@ -75,5 +76,10 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun navigateToRegistrarVehiculo() {
+        val intent = Intent(this, RegistrarVehiculoActivity::class.java)
+        startActivity(intent)
     }
 }
