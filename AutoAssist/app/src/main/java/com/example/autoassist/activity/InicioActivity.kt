@@ -1,7 +1,6 @@
 package com.example.autoassist.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.ContextMenu
@@ -10,7 +9,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.autoassist.R
 import com.example.autoassist.model.Mantenimiento
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -124,10 +124,10 @@ class InicioActivity : AppCompatActivity() {
     }
 
 
-
     override fun onContextItemSelected(item: MenuItem): Boolean {
         val email = intent.getStringExtra("email") ?: ""
-        val idMantenimiento = mantenimientoSeleccionado?.id ?: return super.onContextItemSelected(item)
+        val idMantenimiento =
+            mantenimientoSeleccionado?.id ?: return super.onContextItemSelected(item)
 
         return when (item.itemId) {
             R.id.mi_editar -> {
@@ -138,10 +138,12 @@ class InicioActivity : AppCompatActivity() {
                 )
                 true
             }
+
             R.id.mi_eliminar -> {
                 eliminarMantenimiento(email, idMantenimiento)
                 true
             }
+
             else -> super.onContextItemSelected(item)
         }
     }
@@ -225,4 +227,9 @@ class InicioActivity : AppCompatActivity() {
         llenarDatos()
     }
 
+    private fun loadImage() {
+//        val imagen =
+//            "https://images.patiotuerca.com/thumbs/w/260x153xC/amz_ptf_ecuador/1182023/1765924/o_o/pt_1765924_12152858.jpg"
+//        Glide.with(this).load(imagen).into(imagenVehiculo)
+    }
 }
