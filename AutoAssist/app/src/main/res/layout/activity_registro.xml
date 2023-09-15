@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_registro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.RegistroActivity">
@@ -23,7 +24,7 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/campo2"
         android:layout_width="301dp"
         android:layout_height="53dp"
         android:layout_marginTop="16dp"
@@ -33,10 +34,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/campo1" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/campo1"
         android:layout_width="301dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
@@ -49,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/campo3"
         android:layout_width="301dp"
         android:layout_height="53dp"
         android:layout_marginTop="16dp"
@@ -57,10 +58,10 @@
         android:hint="Fecha"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/campo2" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/campo4"
         android:layout_width="301dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
@@ -68,10 +69,10 @@
         android:hint="Nombre mecánica"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/campo3" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/campo5"
         android:layout_width="301dp"
         android:layout_height="53dp"
         android:layout_marginTop="20dp"
@@ -79,7 +80,7 @@
         android:hint="Detalle"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/campo4" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -88,10 +89,10 @@
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
     <Button
         android:id="@+id/btn_crear"
@@ -100,9 +101,9 @@
         android:layout_marginBottom="44dp"
         android:text="Crear"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText5"
+        app:layout_constraintEnd_toEndOf="@+id/campo5"
         app:layout_constraintHorizontal_bias="0.601"
-        app:layout_constraintStart_toStartOf="@+id/editTextText5" />
+        app:layout_constraintStart_toStartOf="@+id/campo5" />
 
     <Button
         android:id="@+id/btn_actualizar"
@@ -111,8 +112,8 @@
         android:layout_marginBottom="104dp"
         android:text="Actualizar"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText5"
+        app:layout_constraintEnd_toEndOf="@+id/campo5"
         app:layout_constraintHorizontal_bias="0.601"
-        app:layout_constraintStart_toStartOf="@+id/editTextText5" />
+        app:layout_constraintStart_toStartOf="@+id/campo5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

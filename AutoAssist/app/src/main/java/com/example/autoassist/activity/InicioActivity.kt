@@ -13,6 +13,7 @@ import android.widget.ListView
 import android.widget.TextView
 import com.example.autoassist.R
 import com.example.autoassist.model.Mantenimiento
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QueryDocumentSnapshot
@@ -29,6 +30,30 @@ class InicioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_inicio -> {
+                    // Navega a tu fragmento o actividad de "Inicio"
+                }
+                R.id.navigation_mantenimiento -> {
+                    abrirActividadConParametros(
+                        RegistroActivity::class.java,
+                        intent.getStringExtra("email") ?: "",
+                        ""
+                    )
+                }
+                R.id.navigation_combustible -> {
+                    // Navega a tu fragmento o actividad de "Combustible"
+                }
+                R.id.navigation_perfil -> {
+                    // Navega a tu fragmento o actividad de "Perfil"
+                }
+            }
+            true
+        }
+
 
         // Configurando el list view
         listView = findViewById<ListView>(R.id.lv_mantenimientos)
@@ -114,11 +139,46 @@ class InicioActivity : AppCompatActivity() {
                 true
             }
             R.id.mi_eliminar -> {
-
+                eliminarMantenimiento(email, idMantenimiento)
                 true
             }
             else -> super.onContextItemSelected(item)
         }
+    }
+
+    private fun eliminarMantenimiento(email: String, idMantenimiento: String) {
+        db.collection("usuarios")
+            .whereEqualTo("email", email)
+            .get()
+            .addOnSuccessListener { documentos ->
+                if (documentos.documents.isNotEmpty()) {
+                    val idUser = documentos.documents[0].id
+                    db.collection("usuarios")
+                        .document(idUser)
+                        .collection("vehiculos")
+                        .document("1")
+                        .collection("mantenimientos")
+                        .document(idMantenimiento)
+                        .delete()
+                        .addOnSuccessListener {
+                            Log.i("firebase-firestore", "DocumentSnapshot successfully deleted!")
+                            mostrarSnackBar("Mantenimiento eliminado")
+                            llenarDatos()
+                        }
+                        .addOnFailureListener {
+                            Log.i("firebase-firestore", "Error deleting document")
+                            mostrarSnackBar("Error eliminando mantenimiento")
+                        }
+                } else {
+                    Log.i("firebase-firestore", "No document found with the name: $email")
+                    mostrarSnackBar("No se encontró el usuario con email: $email")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.i("firebase-firestore", "Error getting documents: ", exception)
+                mostrarSnackBar("Error obteniendo documentos: $exception")
+            }
+
     }
 
 
@@ -151,6 +211,18 @@ class InicioActivity : AppCompatActivity() {
             Snackbar.LENGTH_LONG
         )
             .setAction("Action", null).show()
+    }
+    fun irActividad(
+        clase: Class<*>
+    ) {
+        val intent = Intent(this, clase)
+        // NO RECIBIMOS RESPUESTA
+        startActivity(intent)
+        // this.startActivity()
+    }
+    override fun onResume() {
+        super.onResume()
+        llenarDatos()
     }
 
 }
