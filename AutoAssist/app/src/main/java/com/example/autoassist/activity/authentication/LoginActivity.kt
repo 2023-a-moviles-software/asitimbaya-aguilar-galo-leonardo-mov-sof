@@ -28,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
 
         buttonLogin.setOnClickListener {
             loginUser()
-            navigateToRegistrarVehiculo()
         }
 
         navigateToRegister()
@@ -78,11 +77,6 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    private fun navigateToRegistrarVehiculo() {
-        val intent = Intent(this, RegistrarVehiculoActivity::class.java)
-        startActivity(intent)
     }
 
     fun abrirActividadConParametros(clase: Class<*>, correo: String) {
