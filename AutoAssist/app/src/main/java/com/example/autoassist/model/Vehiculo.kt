@@ -1,6 +1,10 @@
 package com.example.autoassist.model
 
-data class Vehiculo(
+class Vehiculo(
     val nombreVehiculo: String? = null,
-    val imageUrl: String? = null,
-)
+    val urlImgVehiculo: String? = null
+) {
+    override fun toString(): String {
+        return super.toString()
+    }
+}

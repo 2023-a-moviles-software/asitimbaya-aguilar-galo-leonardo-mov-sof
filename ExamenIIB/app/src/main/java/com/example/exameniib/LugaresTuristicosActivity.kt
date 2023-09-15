@@ -126,10 +126,6 @@ class LugaresTuristicosActivity : AppCompatActivity() {
     }
 
 
-
-
-
-
     override fun onCreateContextMenu(
         menu: ContextMenu?,
         v: View?,
